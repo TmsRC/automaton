@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# This script is configured for rapid turnaround in the short queue
+# This only works for jobs *less than 20 minutes on 2 nodes or fewer*.
+# For more nodes set "--qos=standard" and delete the reservation line.
+
+#SBATCH --job-name=automaton
+#SBATCH --time=00:10:00
+#SBATCH --nodes=1
+#SBATCH --qos=short
+#SBATCH --reservation=shortqos
+#SBATCH --account=m22oc-s2448741
+
+# You can probably leave these options mostly as they are
+
+#SBATCH --output=results/%x-%j.out
+#SBATCH --error=errors/%x-%j.err
+#SBATCH --exclusive
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=standard
+
+module --silent load intel-compilers-19
+module --silent load mpt
+
+# Launch the parallel job
+
+echo "NPROC,L,Time [ms]"
+
+for nprocs in 1 2 4 8 16 32
+do
+  for len in 192 384 768
+  do
+    for i in {1..8}
+    do
+      srun --unbuffered --distribution=block:block --hint=nomultithread --ntasks=$nprocs ./automaton 1234 -s 1000 -l $len -t 2
+    done
+  done
+done

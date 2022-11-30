@@ -1,0 +1,32 @@
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 49 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 49 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 49 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 49 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 49 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 49 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 64 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 64 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 64 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 64 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 64 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 64 with the number of requested nodes 2. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 81 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 81 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 81 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 81 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Job 3677125 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 3677125
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 81 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 81 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 100 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 100 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 100 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 100 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 100 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 100 with the number of requested nodes 3. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 121 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 121 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 121 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 121 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 121 with the number of requested nodes 4. Ignoring --ntasks-per-node.
+srun: Warning: can't honor --ntasks-per-node set to 36 which doesn't match the requested tasks 121 with the number of requested nodes 4. Ignoring --ntasks-per-node.
