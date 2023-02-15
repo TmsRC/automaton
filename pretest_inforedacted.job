@@ -28,7 +28,7 @@ do
   do
     for i in {1..8}
     do
-      srun --unbuffered --distribution=block:block --hint=nomultithread --ntasks=$nprocs ./automaton 1234 -s 1000 -l $len -t 2
+      srun --unbuffered --distribution=block:block --hint=nomultithread --ntasks=$nprocs ./src/automaton 1234 -s 1000 -l $len -t 2
     done
   done
 done

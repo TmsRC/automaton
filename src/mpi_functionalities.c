@@ -171,35 +171,56 @@ void halo_swap_direct(int** cell, int LX, int LY) {
       int forward_neigh, backward_neigh;
       calculate_neighbors(0,&backward_neigh,&forward_neigh);
 
-      MPI_Request request_for;
+      MPI_Request request_for1;
       MPI_Status status;
-      MPI_Issend(&cell[LX][1],LY,MPI_INT,forward_neigh,0,world,&request_for); //swap forward
+      MPI_Issend(&cell[LX][1],LY,MPI_INT,forward_neigh,0,world,&request_for1); //swap forward
       MPI_Recv(&cell[0][1],LY,MPI_INT,backward_neigh,0,world,&status); //receive backward
-      MPI_Wait(&request_for,&status);
 
-      MPI_Request request_back;
-      MPI_Issend(&cell[1][1],LY,MPI_INT,backward_neigh,0,world,&request_back); // swap backward
+      MPI_Request request_back1;
+      MPI_Issend(&cell[1][1],LY,MPI_INT,backward_neigh,0,world,&request_back1); // swap backward
       MPI_Recv(&cell[LX+1][1],LY,MPI_INT,forward_neigh,0,world,&status); //receive forward
-      MPI_Wait(&request_back,&status);
+
+
+
+      calculate_neighbors(1,&backward_neigh,&forward_neigh);
+
+      MPI_Request request_for2;
+//      MPI_Status status;
+      MPI_Issend(&cell[1][LY],1,TRANSVERSE_HALO,forward_neigh,0,world,&request_for2); //swap forward
+      MPI_Recv(&cell[1][0],1,TRANSVERSE_HALO,backward_neigh,0,world,&status); //receive backward
+
+      MPI_Request request_back2;
+      MPI_Issend(&cell[1][1],1,TRANSVERSE_HALO,backward_neigh,0,world,&request_back2); // swap backward
+      MPI_Recv(&cell[1][LY+1],1,TRANSVERSE_HALO,forward_neigh,0,world,&status); //receive forward
+
+
+
+      MPI_Wait(&request_back1,&status);
+      MPI_Wait(&request_for1,&status);
+
+      MPI_Wait(&request_back2,&status);
+      MPI_Wait(&request_for2,&status);
+
 
 }
 
 void halo_swap_transverse(int** cell, int LX, int LY) {
       // swaps halos in the direction transverse to memory contiguity
 
-      int forward_neigh, backward_neigh;
-      calculate_neighbors(1,&backward_neigh,&forward_neigh);
-
-      MPI_Request request_for;
-      MPI_Status status;
-      MPI_Issend(&cell[1][LY],1,TRANSVERSE_HALO,forward_neigh,0,world,&request_for); //swap forward
-      MPI_Recv(&cell[1][0],1,TRANSVERSE_HALO,backward_neigh,0,world,&status); //receive backward
-      MPI_Wait(&request_for,&status);
-
-      MPI_Request request_back;
-      MPI_Issend(&cell[1][1],1,TRANSVERSE_HALO,backward_neigh,0,world,&request_back); // swap backward
-      MPI_Recv(&cell[1][LY+1],1,TRANSVERSE_HALO,forward_neigh,0,world,&status); //receive forward
-      MPI_Wait(&request_back,&status);
+//      int forward_neigh, backward_neigh;
+//      calculate_neighbors(1,&backward_neigh,&forward_neigh);
+//
+//      MPI_Request request_for;
+//      MPI_Status status;
+//      MPI_Issend(&cell[1][LY],1,TRANSVERSE_HALO,forward_neigh,0,world,&request_for); //swap forward
+//      MPI_Recv(&cell[1][0],1,TRANSVERSE_HALO,backward_neigh,0,world,&status); //receive backward
+//
+//      MPI_Request request_back;
+//      MPI_Issend(&cell[1][1],1,TRANSVERSE_HALO,backward_neigh,0,world,&request_back); // swap backward
+//      MPI_Recv(&cell[1][LY+1],1,TRANSVERSE_HALO,forward_neigh,0,world,&status); //receive forward
+//
+//      MPI_Wait(&request_back,&status);
+//      MPI_Wait(&request_for,&status);
 
 }
 

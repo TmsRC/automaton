@@ -32,7 +32,7 @@ do
   do
     for j in {1..6}
     do
-      srun --unbuffered --distribution=block:block --hint=nomultithread --nodes=${NODES[i]} --ntasks=${NPROCS[i]} ./automaton 1234 -s 1000 -l $len -t 2
+      srun --unbuffered --distribution=block:block --hint=nomultithread --nodes=${NODES[i]} --ntasks=${NPROCS[i]} ./src/automaton 1234 -s 1000 -l $len -t 2
     done
   done
 done

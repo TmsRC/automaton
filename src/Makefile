@@ -20,9 +20,7 @@ SRC= \
 	arralloc.c \
 	mpi_functionalities.c \
 	tests.c
-#
-# No need to edit below this line
-#
+
 
 .SUFFIXES:
 .SUFFIXES: .c .o
