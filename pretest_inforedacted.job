@@ -1,15 +1,11 @@
 #!/bin/bash
 
-# This script is configured for rapid turnaround in the short queue
-# This only works for jobs *less than 20 minutes on 2 nodes or fewer*.
-# For more nodes set "--qos=standard" and delete the reservation line.
-
 #SBATCH --job-name=automaton
 #SBATCH --time=00:10:00
 #SBATCH --nodes=1
 #SBATCH --qos=short
 #SBATCH --reservation=shortqos
-#SBATCH --account=m22oc-s2448741
+#SBATCH --account=XXXX
 
 # You can probably leave these options mostly as they are
 

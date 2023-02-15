@@ -1,0 +1,38 @@
+#!/bin/bash
+
+
+#SBATCH --job-name=automaton
+#SBATCH --time=01:40:00
+#SBATCH --qos=standard
+#SBATCH --account=XXXX
+#SBATCH --tasks-per-node=36
+#SBATCH --nodes=4
+
+
+#SBATCH --output=results/%x-%j.out
+#SBATCH --error=errors/%x-%j.err
+#SBATCH --exclusive
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=standard
+
+module --silent load intel-compilers-19
+module --silent load mpt
+
+# Launch the parallel job
+
+
+
+NPROCS=( 1 4 9 16 25 36 49 64 81 100 121 144 )
+L=( 96 192 288 384 480 576 672 768 864 960 1056 1152 )
+NODES=( 1 1 1 1 1 1 2 2 3 3 4 4 )
+
+echo "NPROC,L,Time [ms]"
+
+for i in {0..11}
+do
+    for j in {1..6}
+    do
+      srun --unbuffered --distribution=block:block --hint=nomultithread --nodes=${NODES[i]} --ntasks=${NPROCS[i]} ./automaton 1234 -s 1000 -l ${L[i]} -t 2
+    done
+done
+
