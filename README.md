@@ -1,8 +1,8 @@
 # 2D decomposed automaton
 
-This repository contains the files for the 2D decomposed automaton simulation for the MPP course 22-23.
+This repository contains the files for the 2D decomposed automaton simulation for the MPP course 22-23. The program in question is intended to evidentiate the use of MPI for parallel execution of a program using a flexible (defined at runtime) spatial Geometric Decomposition.
 
-The automaton in question is a simple 2D grid where cells can be either ``dead" or ``alive"; the simulation progresses by changing the state of each cell based on the state of their neighbors at each iteration. If the number of living neighbors in the vicinity of a cell (including the cell itself) is 2, 4 or 5, the cell will be alive in the next iteration, otherwise, it will be dead. This automaton is implemented on a square grid with size $L$, and its initial state is assigned randomly given a starting "density" $\rho$ of living cells. The 2D parallel decomposition divides the grid along both directions and assigns one chunk to every process assigned to the program.
+The automaton in question is a simple 2D grid where cells can be either "dead" or "alive"; the simulation progresses by changing the state of each cell based on the state of their neighbors at each iteration. If the number of living neighbors in the vicinity of a cell (including the cell itself) is 2, 4 or 5, the cell will be alive in the next iteration, otherwise, it will be dead. This automaton is implemented on a square grid with size $L$, and its initial state is assigned randomly given a starting "density" $\rho$ of living cells. The 2D parallel decomposition divides the grid along both directions and assigns one chunk to every process assigned to the program.
 
 Sample graphical output for the simulation is found in `cell.pbm` (not rendered on GitHub). Readable output is found in `interactive_results_sample`. The `errors/` and `results/` directories contain the corresponding files obtained from executing in test mode on the Cirrus supercomputer. using the scripts provided. 
 
