@@ -1,6 +1,6 @@
 # 2D decomposed automaton
 
-This repository contains the files for the 2D decomposed automaton simulation for the *Message Passing Programming* course 22-23 at The University of Edinburgh. The program in question is intended to evidentiate the use of MPI for parallel execution of a program using a flexible (defined at runtime) and efficient spatial Geometric Decomposition of a problem.
+This repository contains the files for the 2D decomposed cellular automaton simulation, which intends to be a simplified version of *Conway's Game of Life*. The program in question is intended to evidentiate the use of MPI for parallel execution of a program using a flexible (defined at runtime) and efficient spatial Geometric Decomposition of a problem.
 
 The automaton in question is a simple 2D grid where cells can be either "dead" or "alive"; the simulation progresses by changing the state of each cell based on the state of their neighbors at each iteration. If the number of living neighbors in the vicinity of a cell (including the cell itself) is 2, 4 or 5, the cell will be alive in the next iteration, otherwise, it will be dead. This automaton is implemented on a square grid with size $L$, and its initial state is assigned randomly given a starting "density" $\rho$ of living cells. The 2D parallel decomposition divides the grid along both directions and assigns one chunk to every process assigned to the program.
 
